@@ -7,8 +7,7 @@
 
 	See Donald Knuth's paper here: https://arxiv.org/pdf/cs/0011047.pdf
 
-	Zendoku also has a good article explaining the dancing links algorithm:
-	https://garethrees.org/2007/06/10/zendoku-generation/
+	
 */
 #include "Sudoku.h"
 
