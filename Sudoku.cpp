@@ -14,13 +14,13 @@
 #include <cstdint>
 #include <iostream>
 #include <array>
-
+using namespace std;
 int main()
 {
 	Sudoku sudoku;
 
 	// 19/02/2022 NYTimes hard sudoku
-	std::vector<std::vector<int32_t>> const grid = {
+	vector<vector<int32_t>> const grid = {
 		{0,7,0, 4,8,0, 1,3,0},
 		{0,0,0, 0,0,0, 0,0,0},
 		{0,0,0, 5,6,0, 0,8,0},
@@ -129,7 +129,7 @@ namespace
 	/**
 		Function for inserting a row into the bottom of the dancing links matrix
 	*/
-	void Sudoku::insertRow(std::array<int32_t, cells_per_row> const& items)
+	void Sudoku::insertRow(array<int32_t, cells_per_row> const& items)
 	{
 		for (int32_t i = 0; i < cells_per_row; ++i)
 		{
@@ -166,16 +166,16 @@ namespace
 			grid_solution[row][col] = num;
 		}
 
-		std::cout << "-----" << std::endl;
+		cout << "-----" << endl;
 		for (int32_t i = 0; i < 9; ++i)
 		{
 			for (int32_t j = 0; j < 9; ++j)
 			{
-				std::cout << (grid_solution[i][j] + 1) << " ";
+				cout << (grid_solution[i][j] + 1) << " ";
 			}
-			std::cout << std::endl;
+			cout << endl;
 		}
-		std::cout << "-----" << std::endl;
+		cout << "-----" << endl;
 	}
 
 	/**
@@ -236,7 +236,7 @@ namespace
 		Simulate the state of the dancing links matrix asif the algorithm had
 		picked the rows corresponding to the current layout of the sudoku
 	*/
-	void Sudoku::loadGridAndSolve(std::vector<std::vector<int32_t>> const& grid)
+	void Sudoku::loadGridAndSolve(vector<vector<int32_t>> const& grid)
 	{
 		int32_t z = 0;
 
